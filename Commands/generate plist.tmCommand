@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+# set the command string to open ruby file
+command=$(tail -n1 &lt;&lt;&lt;"ruby ${TM_BUNDLE_SUPPORT//\ /\\\ }/readcommand.rb ${TM_BUNDLE_SUPPORT//\ /\\\ } $TM_PROJECT_DIRECTORY")
+
+# create our applescript which will launch a
+# new Terminal window if there is not one running
+# and otherwise run the command we want in the
+# current running Terminal window
+aplscr="tell application \"System Events\" to set terminalRunning to (exists process \"Terminal\")
+if (not terminalRunning) then
+tell application \"Terminal\" to activate
+tell application \"Terminal\" to do script \"$command\"
+else
+tell application \"Terminal\" to activate
+tell application \"Terminal\" to do script \"$command\" in front window
+end if
+tell application \"TextMate\" to activate"
+ 
+# execute the applescript
+osascript -e "$aplscr" &amp;&gt;/dev/null &amp;</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>generate plist</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.sass</string>
+	<key>uuid</key>
+	<string>325AC979-E7E2-49D1-85F2-E1719E5A1D06</string>
+</dict>
+</plist>
