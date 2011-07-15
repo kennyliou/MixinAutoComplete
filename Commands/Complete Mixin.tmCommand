@@ -9,7 +9,7 @@
 require ENV['TM_SUPPORT_PATH'] + '/lib/osx/plist'
 require ENV['TM_SUPPORT_PATH'] + '/lib/ui'
 
-choices = OSX::PropertyList.load(File.read(ENV['TM_BUNDLE_SUPPORT'] + '/test.plist'))
+choices = OSX::PropertyList.load(File.read(ENV['TM_BUNDLE_SUPPORT'] + '/mixins.plist'))
 TextMate::UI.complete(choices, :initial_filter =&gt; ENV['TM_CURRENT_WORD'], :extra_chars =&gt; '_')
 </string>
 	<key>fallbackInput</key>
