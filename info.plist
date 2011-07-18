@@ -4,6 +4,11 @@
 <dict>
 	<key>name</key>
 	<string>Mw_Mixin</string>
+	<key>ordering</key>
+	<array>
+		<string>4FECAAD3-3CEE-479E-8C7C-756A9054933A</string>
+		<string>325AC979-E7E2-49D1-85F2-E1719E5A1D06</string>
+	</array>
 	<key>uuid</key>
 	<string>9919ED52-6618-4308-BE83-DE097DADF379</string>
 </dict>

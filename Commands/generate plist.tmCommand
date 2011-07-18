@@ -8,7 +8,7 @@
 	<string>#!/bin/bash
 
 # set the command string to open ruby file
-command=$(tail -n1 &lt;&lt;&lt;"ruby ${TM_BUNDLE_SUPPORT//\ /\\\ }/readcommand.rb ${TM_SUPPORT_PATH} $TM_PROJECT_DIRECTORY")
+command=$(tail -n1 &lt;&lt;&lt;"ruby ${TM_BUNDLE_SUPPORT//\ /\\\ }/readcommand.rb ${TM_SUPPORT_PATH} $TM_PROJECT_DIRECTORY ${TM_FILEPATH}")
 
 # create our applescript which will launch a
 # new Terminal window if there is not one running
